@@ -24,10 +24,20 @@ def repeat_hour_finder(array)
 		end
 	end
 	
-	return hour_arr
+	return hour_arr.uniq
 end
 
-puts 'time_targeting.rb running...'
+def print_peak_registration_hours(array)
+	puts "The hours of the day in which the most registrations occured are:"
+	array.each do |hour|
+		if hour == array.last
+			print "and #{hour}:00"
+		else
+			print "#{hour}:00, "
+		end
+	end
+	print "\n"
+end
 
 hours_array = Array.new
 
@@ -41,4 +51,4 @@ contents.each do |row|
 	hours_array << hour_finder(row[:regdate])
 end
 
-puts "The hours of the day in which the most registrations occured are #{repeat_hour_finder(hours_array)}"	
+print_peak_registration_hours(repeat_hour_finder(hours_array))
