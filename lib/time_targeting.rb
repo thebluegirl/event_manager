@@ -6,7 +6,7 @@ def hour_finder(date)
 	Time.strptime(date, "%y/%d/%m %k:%M").hour
 end
 
-def repeat_hour_finder(array)
+def highest_repeats_finders(array)
 	counter = 0
 	hour_arr = Array.new
 
@@ -28,7 +28,7 @@ def repeat_hour_finder(array)
 end
 
 def print_peak_registration_hours(array)
-	puts "The hours of the day in which the most registrations occured are:"
+	puts "The hours of the day in which the most registrations occurred are:"
 	array.each do |hour|
 		if hour == array.last
 			print "and #{hour}:00"
@@ -51,4 +51,4 @@ contents.each do |row|
 	hours_array << hour_finder(row[:regdate])
 end
 
-print_peak_registration_hours(repeat_hour_finder(hours_array))
+print_peak_registration_hours(highest_repeats_finders(hours_array))
