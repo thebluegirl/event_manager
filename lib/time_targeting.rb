@@ -28,15 +28,19 @@ def highest_repeats_finders(array)
 end
 
 def print_peak_registration_hours(array)
-	puts "The hours of the day in which the most registrations occurred are:"
-	array.each do |hour|
-		if hour == array.last
-			print "and #{hour}:00"
-		else
-			print "#{hour}:00, "
+	if array.count == 1
+		print "The hour of the day in which the most registrations occurred is: #{hour}:00"
+	else
+		puts "The hours of the day in which the most registrations occurred are:"
+		array.each do |hour|
+			if hour == array.last
+				print "and #{hour}:00"
+			else
+				print "#{hour}:00, "
+			end
 		end
+		print "\n"
 	end
-	print "\n"
 end
 
 hours_array = Array.new
